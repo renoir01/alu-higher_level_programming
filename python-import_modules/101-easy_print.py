@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-import builtins; builtins.print("#pythoniscool")
+with open(__file__, 'r') as file:
+    exec(file.read())
