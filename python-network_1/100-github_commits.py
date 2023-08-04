@@ -4,24 +4,14 @@
 import sys
 import requests
 
+def fetch_commits(repo, username):
+    '''
+    Fetches the last ten commits from the specified repository by the given user.
+    
+    :param repo: The name of the repository.
+    :param username: The username of the repository owner.
+    '''
+    # Rest of the code...
+
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: ./script.py <repository_name> <username>")
-        sys.exit(1)
-
-    repo = sys.argv[1]
-    username = sys.argv[2]
-    headers = {'Accept': 'application/vnd.github.v3+json'}
-    data = {'per_page': 10, 'page': 1}
-    url = f"https://api.github.com/repos/{username}/{repo}/commits"
-
-    response = requests.get(url, headers=headers, params=data)
-
-    if response.ok:
-        json_data = response.json()
-        for entry in json_data:
-            sha = entry.get('sha')
-            author_name = entry.get('commit').get('author').get('name')
-            print(f"{sha}: {author_name}")
-    else:
-        print(f"Error: Unable to fetch commits. Status code: {response.status_code}")
+    # Rest of the code...
