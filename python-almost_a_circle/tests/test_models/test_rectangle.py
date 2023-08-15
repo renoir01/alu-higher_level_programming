@@ -68,7 +68,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_rectangle_string_display(self):
         self.assertEqual(Rectangle(4, 6, 2, 1, 12).__str__(), "[Rectangle] (12) 2/1 - 4/6")
-        self.assertEqual(Rectangle(5, 5, 1).__str__(), "[Rectangle] (14) 1/0 - 5/5")
+        self.assertEqual(Rectangle(5, 5, 1).__str__(), "[Rectangle] (15) 1/0 - 5/5")
 
     def test_rectangle_update(self):
         r1 = Rectangle(10, 10, 10, 10)
@@ -92,4 +92,12 @@ class TestRectangle(unittest.TestCase):
     def test_rectangle_to_dictionary(self):
         r1 = Rectangle(10, 2, 1, 9)
         self.assertDictEqual(r1.to_dictionary(), r1.to_dictionary())
+
+    def test_rectangle_save_to_file(self):
+        r1 = Rectangle.save_to_file(None)
+        r2 = Rectangle.save_to_file([])
+        r3 = Rectangle.save_to_file([Rectangle(1, 2)])
+        self.assertEqual(r1, 1)
+        self.assertEqual(r2, 0)
+        self.assertEqual(r3, 0)
 

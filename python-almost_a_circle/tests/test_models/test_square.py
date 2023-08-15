@@ -18,9 +18,9 @@ class TesSquare(unittest.TestCase):
         self.base1 = Square(1)
         self.base2 = Square(1, 2)
         self.base3 = Square(1, 2, 3)
-        self.assertEqual(self.base1.id, 7)
-        self.assertEqual(self.base2.id, 8)
-        self.assertEqual(self.base3.id, 9)
+        self.assertEqual(self.base1.id, 8)
+        self.assertEqual(self.base2.id, 9)
+        self.assertEqual(self.base3.id, 10)
         
     def test_square_for_type_error(self):
         with self.assertRaises(TypeError):
@@ -44,9 +44,9 @@ class TesSquare(unittest.TestCase):
             Square(0)
 
     def test_square_string_display(self):
-        self.assertEqual(Square(5).__str__(), "[Square] (1) 0/0 - 5")
-        self.assertEqual(Square(2, 2).__str__(), "[Square] (2) 2/0 - 2")
-        self.assertEqual(Square(3, 1, 3).__str__(), "[Square] (3) 1/3 - 3")
+        self.assertEqual(Square(5).__str__(), "[Square] (2) 0/0 - 5")
+        self.assertEqual(Square(2, 2).__str__(), "[Square] (3) 2/0 - 2")
+        self.assertEqual(Square(3, 1, 3).__str__(), "[Square] (4) 1/3 - 3")
         self.assertEqual(Square(3, 1, 3, 6).__str__(), "[Square] (6) 1/3 - 3")
 
     def test_square_update(self):
@@ -67,3 +67,11 @@ class TesSquare(unittest.TestCase):
         s2 = Square(1, 1)
         self.assertDictEqual(s1.to_dictionary(), s1.to_dictionary())
         self.assertDictEqual(s2.to_dictionary(), s2.to_dictionary())
+
+    def test_square_save_to_file(self):
+        s1 = Square.save_to_file(None)
+        s2 = Square.save_to_file([])
+        s3 = Square.save_to_file([Square(1)])
+        self.assertEqual(s1, 1)
+        self.assertEqual(s2, 0)
+        self.assertEqual(s3, 0)
