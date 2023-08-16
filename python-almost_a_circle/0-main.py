@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Script to test the Base class.
-"""
-
+""" 0-main """
 from models.base import Base
 
 if __name__ == "__main__":
