@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 '''Creates a class called Base
 '''
 import json
@@ -129,3 +130,31 @@ class Base:
                                              height=int(row[2]), x=int(row[3]),
                                              y=int(row[4])))
         return result
+=======
+"""
+Module containing the Base class.
+"""
+
+class Base:
+    """
+    The Base class for managing id attributes in other classes.
+    """
+
+    __nb_objects = 0
+
+    def __init__(self, id=None):
+        """
+        Initializes a new instance of the Base class.
+
+        Args:
+            id (int): The id of the instance. If None, will use the next value of __nb_objects.
+
+        Attributes:
+            id (int): The id of the instance.
+        """
+        if id is not None:
+            self.id = id
+        else:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
+>>>>>>> 191e4a2018aa5ae4d7c78cb564c710d0c03342f9
