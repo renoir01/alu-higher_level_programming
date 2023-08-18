@@ -19,9 +19,9 @@ class TesSquare(unittest.TestCase):
         self.base1 = Square(1)
         self.base2 = Square(1, 2)
         self.base3 = Square(1, 2, 3)
-        self.assertEqual(self.base1.id, 13)
-        self.assertEqual(self.base2.id, 14)
-        self.assertEqual(self.base3.id, 15)
+        self.assertEqual(self.base1.id, 38)
+        self.assertEqual(self.base2.id, 39)
+        self.assertEqual(self.base3.id, 40)
         
     def test_square_for_type_error(self):
         with self.assertRaises(TypeError):
@@ -45,9 +45,9 @@ class TesSquare(unittest.TestCase):
             Square(0)
 
     def test_square_string_display(self):
-        self.assertEqual(Square(5).__str__(), "[Square] (7) 0/0 - 5")
-        self.assertEqual(Square(2, 2).__str__(), "[Square] (8) 2/0 - 2")
-        self.assertEqual(Square(3, 1, 3).__str__(), "[Square] (9) 1/3 - 3")
+        self.assertEqual(Square(5).__str__(), "[Square] (32) 0/0 - 5")
+        self.assertEqual(Square(2, 2).__str__(), "[Square] (33) 2/0 - 2")
+        self.assertEqual(Square(3, 1, 3).__str__(), "[Square] (34) 1/3 - 3")
         self.assertEqual(Square(3, 1, 3, 6).__str__(), "[Square] (6) 1/3 - 3")
 
     def test_square_update(self):
