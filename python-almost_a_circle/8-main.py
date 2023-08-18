@@ -18,3 +18,18 @@ if __name__ == "__main__":
 
     r1.update(x=1, height=2, y=3, width=4)
     print(r1)
+
+    r1.update(22, x=1, height=2, y=3, width=4)
+    print(r1)
+
+    r1.update(13, 2, x=1, height=2, y=3, width=4)
+    print(r1)
+
+    r1.update(10, 3, 10, x=1, height=2, y=3, width=4)
+    print(r1)
+
+    r1.update(35, 3, 4, 3, x=1, height=2, y=3, width=4)
+    print(r1)
+
+    r1.update(25, 7, 5, 1, 2, x=1, height=2, y=3, width=4)
+    print(r1)
