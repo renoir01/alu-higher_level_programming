@@ -20,9 +20,9 @@ class TestRectangle(unittest.TestCase):
         self.base1 = Rectangle(1, 2)
         self.base2 = Rectangle(1, 2, 3)
         self.base3 = Rectangle(1, 2, 3, 4)
-        self.assertEqual(self.base1.id, 3)
-        self.assertEqual(self.base2.id, 4)
-        self.assertEqual(self.base3.id, 5)
+        self.assertEqual(self.base1.id, 5)
+        self.assertEqual(self.base2.id, 6)
+        self.assertEqual(self.base3.id, 7)
 
     def test_rectangle_for_type_error(self):
         with self.assertRaises(TypeError):
@@ -69,7 +69,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_rectangle_string_display(self):
         self.assertEqual(Rectangle(4, 6, 2, 1, 12).__str__(), "[Rectangle] (12) 2/1 - 4/6")
-        self.assertEqual(Rectangle(5, 5, 1).__str__(), "[Rectangle] (21) 1/0 - 5/5")
+        self.assertEqual(Rectangle(5, 5, 1).__str__(), "[Rectangle] (23) 1/0 - 5/5")
 
     def test_rectangle_update(self):
         r1 = Rectangle(10, 10, 10, 10)
